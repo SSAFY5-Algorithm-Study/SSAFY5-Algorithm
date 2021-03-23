@@ -1,5 +1,3 @@
-from copy import deepcopy
-
 # 동서남북 순으로 drc 설정
 dr = [0, 0, 1, -1]
 dc = [1, -1, 0, 0]
@@ -15,7 +13,7 @@ def move(cr, cc, visited, prob, level):
     # N 만큼 이동 후 아직까지 겹치는 길로 이동하지 않았다면 재귀 탈출
     if level >= N:
         return
-    
+   
     # 현재 위치를 경로에 추가
     visited.append([cr, cc])
     # 현재 위치를 기준으로 사방탐색
@@ -25,9 +23,10 @@ def move(cr, cc, visited, prob, level):
         if [nr, nc] in visited:
             global ans
             ans -= prob*prob_arr[i]
-            return
+            continue
         # 그렇지 않은 경우 다음 칸으로 이동하고 다시 재귀 호출
-        move(nr, nc, deepcopy(visited), prob*prob_arr[i], level+1)
+        move(nr, nc, visited, prob*prob_arr[i], level+1)
+    visited.pop()
 
 # 경우의 수를 담은 배열과, 타겟 이동 횟수 N 받아오기
 prob_arr = list(map((lambda x: float(x)), input().split()))
