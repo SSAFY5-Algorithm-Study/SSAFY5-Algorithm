@@ -23,9 +23,11 @@ def move(cr, cc, visited, prob, level):
         if [nr, nc] in visited:
             global ans
             ans -= prob*prob_arr[i]
+            # 이 부분에서 continue가 아니라 return을 한게 문제였음
             continue
         # 그렇지 않은 경우 다음 칸으로 이동하고 다시 재귀 호출
         move(nr, nc, visited, prob*prob_arr[i], level+1)
+    # deepcopy 대신 visit 배열에 넣었다 빼는 형식으로 시간 절약
     visited.pop()
 
 # 경우의 수를 담은 배열과, 타겟 이동 횟수 N 받아오기
