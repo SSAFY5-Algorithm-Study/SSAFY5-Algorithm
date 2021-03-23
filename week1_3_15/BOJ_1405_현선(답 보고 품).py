@@ -48,6 +48,7 @@ def DFS(level, r, c):
         percent += DFS(level+1,cr,cc)*prob[i]
     visited[r][c] = 0
     return percent
+
 n, E, W, S, N = map(int,input().split())
 prob = [E/100, W/100, S/100, N/100]
 visited = [[0 for _ in range(2*n + 1)] for _ in range(2 * n + 1)]
