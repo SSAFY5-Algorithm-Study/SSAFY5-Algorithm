@@ -15,7 +15,6 @@
 dr = [-1, 1, 0, 0]
 dc = [0, 0, -1, 1]
 
-
 def DFS(sr,sc):
     max_art = 1
     visited[sr][sc] = 1
