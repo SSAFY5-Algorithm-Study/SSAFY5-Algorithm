@@ -24,5 +24,6 @@ while V != 0:
     # 남은 요일이 적거나 같으면 나머지를 더해줌
     else:
         ans += remainder
+    # (share * L) + min(V % P, L)
     print('Case %d: %d' % (i, ans))
     L, P, V = map(int, input().split())
