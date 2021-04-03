@@ -35,7 +35,7 @@ for _ in range(T):
     print(cnt)
 '''
 import sys
-input = sys.stdin.readline
+sys.stdin = open('test1.txt')
 
 T = int(input())
 for _ in range(T):
