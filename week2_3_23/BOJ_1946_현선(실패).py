@@ -20,6 +20,9 @@
 각 테스트 케이스에 대해서 진영 주식회사가 선발할 수 있는 신입사원의 최대 인원수를 한 줄에 하나씩 출력한다.
 '''
 
+import sys
+sys.stdin = open('test1.txt')
+
 #???????? 시간초과??????
 T = int(input())
 for _ in range(T):
