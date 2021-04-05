@@ -6,16 +6,15 @@ def BFS(N, cnt):
     while queue:
         position = queue.pop(0)
         for calc, num in ways:
-            cnt += 1
             if calc == '-':
                 next_position = 0 if position - num <= 0 else position - num
-                queue.append((next_position, cnt))
+                queue.append((next_position, cnt + 1))
             elif calc == '+':
                 next_position = position + num
-                queue.append((next_position, cnt))
+                queue.append((next_position, cnt + 1))
             elif calc == '*':
                 next_position = position * num
-                queue.append((next_position, cnt))
+                queue.append((next_position, cnt + 1))
 
 T = int(input())
 for tc in range(1, T + 1):
