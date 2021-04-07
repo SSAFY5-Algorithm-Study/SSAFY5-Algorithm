@@ -25,7 +25,7 @@
 '''
 
 # 답은 맞는데 시간초과... 시불
-
+import collections
 # 상하좌우
 dr = [-1, 1, 0, 0]
 dc = [0, 0, -1, 1]
@@ -40,7 +40,7 @@ dc = [0, 0, -1, 1]
 def BFS():
     Q = start_point
     while Q:
-        cr, cc = Q.pop(0)
+        cr, cc = Q.popleft()
         for i in range(4):
             r = cr + dr[i]
             c = cc + dc[i]
@@ -63,7 +63,7 @@ M, N = map(int, input().split())
 tomato = [list(map(int, input().split())) for _ in range(N)]
 
 # 배열에서 1인 토마토들 다 찾아서 시작 포인트로 넣어주기
-start_point = []
+start_point = collections.deque([])
 for i in range(N):
     for j in range(M):
         if tomato[i][j] == 1:
