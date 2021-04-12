@@ -1,5 +1,14 @@
+'''
+list.pop(0)은 첫 번째 요소를 pop한 후 나머지 요소를 앞으로 한 칸씩 당기므로 O(N)의 시간이 걸린다.
+상관 없다면 list.pop()을 사용하자.
+큐를 활용할 때 리스트를 이용하는 것보다 deque가 눈에 띌 정도로 빠르다. O(1)
+표준 라이브러리를 적극적으로 활용하자
+'''
+from collections import deque
+
 import sys
 sys.stdin = open('input.txt')
+
 
 dxy = [(1, 0), (-1, 0), (0, 1), (0, -1)]
 
@@ -39,13 +48,14 @@ def find_situations():
 
 
 def BFS(ones):
+    queue = deque()
     cnt = 0
     queue = ones
     # 토마토가 있는 지역에는 미리 발견 표시 해줌
     for y, x, z in queue:
         discovered[y][x] = 1
     while queue:
-        cr, cc, cnt = queue.pop(0)
+        cr, cc, cnt = queue.popleft
         for r, c in dxy:
             nr = cr + r
             nc = cc + c
@@ -66,8 +76,9 @@ for tc in range(1, T + 1):
     # 익어진 토마토 위치 저장할 빈 리스트
     discovered = [[0] * (N + 2) for _ in range(M + 2)]
     # 토마토가 익어있는 상태와 토마토가 모두 익지 못하는 상황 찾는 함수 실행
-    if find_situations():
-        print(find_situations())
+    ans = find_situations()
+    if ans:
+        print(ans)
     # 위의 두 가지의 상황이 아니면
     else:
         # BFS 시작
