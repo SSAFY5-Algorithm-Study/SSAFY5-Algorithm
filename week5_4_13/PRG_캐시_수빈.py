@@ -49,8 +49,10 @@ def solution(cacheSize, cities):
             # cache hit
             if city in cache:
                 answer += 1
-                pos = cache.index(city)
-                cache.append(cache.pop(pos))
+                # pos = cache.index(city)
+                # cache.append(cache.pop(pos))
+                cache.remove(city)
+                cache.append(city)
             # cache miss
             else:
                 if len(cache) >= cacheSize:
