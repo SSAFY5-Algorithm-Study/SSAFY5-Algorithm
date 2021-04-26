@@ -7,23 +7,23 @@
 
 # 실패
 
-
 def check(idx):
     total = 0
-    for i in range(idx, -1, -1):
+    for i in range(idx,-1,-1):
         total += sel[i]
-        print(i, idx)
-        if total > 0 and S_list[i][idx] == '+':
-            return True
-        elif total < 0 and S_list[i][idx] == '-':
-            return True
-        elif total == 0 and S_list[i][idx] == '0':
-            return True
-    return False
+        if total > 0 and S_list[i][idx] != '+':
+            return False
+        elif total < 0 and S_list[i][idx] != '-':
+            return False
+        elif total == 0 and S_list[i][idx] != '0':
+            return False
+    return True
 
 
 def soonyeol(level):
-    if level >= N:
+    if level == N:
+        if check(level-1):
+            result = sel
         return sel
     for i in range(-10, 11, 1):
         sel[level] = i
@@ -31,8 +31,14 @@ def soonyeol(level):
         if check(level):
             soonyeol(level+1)
 
+
 N = int(input())
 S = input()
-S_list = [S[:len(S)//2], S[len(S)//2:]]
+S_list = [[0] * N for i in range(N)]
+k = 0
+for i in range(N):
+    for j in range(i,N):
+        S_list[i][j] = S[k]
+        k += 1
 sel = [0] * N
-print(soonyeol(0))
+soonyeol(0)
