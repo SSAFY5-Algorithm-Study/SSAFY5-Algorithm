@@ -6,47 +6,32 @@ https://www.acmicpc.net/problem/1248
 # 체크 필요한 경우
 def check(idx):
     s = 0
-    # i부터 i번째까지, i-1부터 i번째까지 .... 0부터 i번째까지(열의 아래에서 위로 더해간다)
-    for i in range(idx, -1, -1):
+    for i in range(idx, N):
         s += ans[i]
-        if s == 0 and S[i][idx] != '0':
+        if s == 0 and S[idx][i] != '0':
             return False
-        if s > 0 and S[i][idx] != '+':
+        if s > 0 and S[idx][i] != '+':
             return False
-        if s < 0 and S[i][idx] != '-':
+        if s < 0 and S[idx][i] != '-':
             return False
     return True
 
-
-# def get_ans(idx):
-#     if idx == N:
-#         return
-    
-#     # 대각선에 있는게 0이면 해당 숫자도 0
-#     if S[idx][idx] == '0':
-#         ans[idx] = 0
-#         return get_ans(idx+1)
-
-#     for i in range(-10, 11):
-#         ans[idx] = i
-#         if check(idx):
-#             get_ans(idx+1)
-
 def get_ans(idx):
-    if idx == N:
+
+    if idx == -1:
         return True
     
-    # 대각선에 있는게 0이면 해당 숫자도 0
     if S[idx][idx] == '0':
         ans[idx] = 0
-        return get_ans(idx+1)
-
+        return get_ans(idx-1)
+    
     for i in range(-10, 11):
         ans[idx] = i
-        if check(idx) and get_ans(idx+1):
+        if check(idx) and get_ans(idx-1):
             return True
-            
+    
     return False
+
 
 N = int(input())
 sign = list(input())
@@ -58,7 +43,7 @@ for i in range(N):
         S[i][j] = sign.pop(0)
 
 ans = [0] * N
-get_ans(0)
+get_ans(N-1)
 print(*ans)
 
 '''
