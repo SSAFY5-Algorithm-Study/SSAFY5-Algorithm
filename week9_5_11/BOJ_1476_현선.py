@@ -33,16 +33,13 @@ while E or S or M:
     # E가 0이 됐다!
     if E == 0:
         # 근데 S나 M이 아직 숫자가 남아있다!
-        if S or M:
             # 그럼 E를 15 증가
-            E += 15
+        E += 15
     # 위와 마찬가지
     if S == 0:
-        if E or M:
-            S += 28
+        S += 28
     if M == 0:
-        if E or S:
-            M += 19
+        M += 19
     year += 1
     E -= 1
     S -= 1
