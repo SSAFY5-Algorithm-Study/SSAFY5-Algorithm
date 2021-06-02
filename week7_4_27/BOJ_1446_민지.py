@@ -9,7 +9,6 @@
 6. 도착지에 도착할때까지 반복한다
 
 """
-
 import sys
 sys.stdin = open('input.txt')
 
