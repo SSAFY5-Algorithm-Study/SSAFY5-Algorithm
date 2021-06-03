@@ -8,7 +8,7 @@ def calculate_chonsu(s, e):
 
     stack = [[s, 0]]
     while stack:
-        current, level = stack.pop()
+        current, level = stack.pop(0)
         if current == e:
             return level
 
@@ -34,5 +34,4 @@ for _ in range(M):
     AL[y].append(x)
 
 result = calculate_chonsu(A, B)
-print(result
-)
+print(result)
