@@ -2,13 +2,22 @@ import sys
 sys.stdin = open('input.txt', 'r')
 
 
-def calculate_chonsu(s):
-    visited = [0] * N
+def calculate_chonsu(s, e):
+    visited = [0] * (N+1)
     visited[s] = 1
 
-    stack = [s]
+    stack = [[s, 0]]
     while stack:
-        pass
+        current, level = stack.pop()
+        if current == e:
+            return level
+
+        for i in AL[current]:
+            if not visited[i]:
+                stack.append([i, level+1])
+                visited[i] = 1
+    return -1
+
 
 
 # 사람 수
@@ -24,4 +33,6 @@ for _ in range(M):
     AL[x].append(y)
     AL[y].append(x)
 
-calculate_chonsu(A)
+result = calculate_chonsu(A, B)
+print(result
+)
