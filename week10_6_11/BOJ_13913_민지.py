@@ -1,5 +1,4 @@
 import sys
-from collections import deque
 input = sys.stdin.readline
 
 [-1, 0, 3, -1, 1]
@@ -15,26 +14,23 @@ def find_path(pa, x):
 def bfs(N, K):
     pa = [-1] * 100001
     moves = [lambda x:x+1, lambda x:x-1, lambda x:2*x]
+    queue = [N]
 
-    queue = deque([N])
     while queue:
-        current = queue.popleft()
+        current = queue.pop(0)
         for i in range(3):
             nxt = moves[i](current)
 
-            if nxt == K:
-                pa[nxt] = current
-                moves, path = find_path(pa, K)
-                return moves, path
-
-            elif 0 <= nxt <= 100000 and pa[nxt] == -1 and nxt != N:
+            if 0 <= nxt <= 100000 and pa[nxt] == -1 and nxt != N:
                 pa[nxt] = current
                 queue.append(nxt)
-                
-            
+                if nxt == K:
+                    pa[nxt] = current
+                    moves, path = find_path(pa, K)
+                    return moves, path
 
 N, K = map(int, input().split())
 
 moves, path = bfs(N, K)
 print(moves)
-print(*path)
+print(" ".join(map(str, path)))
