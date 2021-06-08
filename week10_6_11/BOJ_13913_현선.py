@@ -21,15 +21,15 @@ def bfs(n):
         temp = q.pop(0)
         if temp == K:
             return
-        if  0 <= temp-1 <= 100000 and visit[temp-1] == 0:
+        elif  0 <= temp-1 <= 100000 and visit[temp-1] == 0:
             q.append(temp-1)
             arr[temp-1] = temp
             visit[temp-1] = visit[temp] + 1
-        if 0 <= temp+1 <= 100000 and visit[temp+1] == 0:
+        elif 0 <= temp+1 <= 100000 and visit[temp+1] == 0:
             q.append(temp+1)
             arr[temp+1] = temp
             visit[temp+1] = visit[temp] + 1
-        if 0 <= temp * 2 <= 100000 and visit[temp*2] == 0:
+        elif 0 <= temp * 2 <= 100000 and visit[temp*2] == 0:
             q.append(temp*2)
             arr[temp*2] = temp
             visit[temp*2] = visit[temp] + 1

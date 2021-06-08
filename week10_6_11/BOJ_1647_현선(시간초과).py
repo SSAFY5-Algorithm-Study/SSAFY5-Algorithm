@@ -25,6 +25,10 @@
 # 접근 : 크러스컬?
 # 크러스컬로 만들어서, 길 유지비의 합을 최소로 해주고, 마지막 값을 지워서 반반으로 나눠줌.
 # 시간초과.....................
+import sys
+input = sys.stdin.readline
+
+
 def find_daepyo(x):
     while daepyo[x] != x:
         x = daepyo[x]
@@ -53,4 +57,4 @@ while cnt < N-1:
     else:
         i += 1
 
-print(sum(result[:-1]))
+print(sum(result) - max(result))
