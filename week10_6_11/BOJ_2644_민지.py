@@ -6,18 +6,17 @@ def calculate_chonsu(s, e):
     visited = [0] * (N+1)
     visited[s] = 1
 
-    stack = [[s, 0]]
-    while stack:
-        current, level = stack.pop(0)
+    queue = [[s, 0]]
+    while queue:
+        current, level = queue.pop(0)
         if current == e:
             return level
 
         for i in AL[current]:
             if not visited[i]:
-                stack.append([i, level+1])
+                queue.append([i, level+1])
                 visited[i] = 1
     return -1
-
 
 
 # 사람 수
