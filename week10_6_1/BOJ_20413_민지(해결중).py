@@ -23,7 +23,3 @@ for i in range(1, len(tier)):
 
 print(total)
 
-
-# [3
-# 30 60 90 150
-# BSG
