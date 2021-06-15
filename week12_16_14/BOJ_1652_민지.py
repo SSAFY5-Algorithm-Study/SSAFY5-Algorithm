@@ -51,5 +51,4 @@ def find_cnt(d):
         cnt = 0
     return ans
 
-
 print(str(find_cnt('row')) + " " + str(find_cnt('col')))
