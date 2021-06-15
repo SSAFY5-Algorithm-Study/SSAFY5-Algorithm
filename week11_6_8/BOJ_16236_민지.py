@@ -43,4 +43,3 @@ sec = 0
 while r >= 0:
     r, c, sec = bfs(r, c, sec)
 
-print(sec)
