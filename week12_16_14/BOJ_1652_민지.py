@@ -5,7 +5,6 @@ N = int(input())
 room = [input() for _ in range(N)]
 
 # 방법 1: 함수화 하지 않고 row, col 따로 나눠서 풀기
-
 row_cnt = col_cnt = 0
 
 for i in range(N):
