@@ -6,20 +6,15 @@ N = int(input())
 tri = [list(map(int, input().split())) for _ in range(N)]
 max_sum = 0
 
-def find_max_path(r, c, t_sum):
-    global max_sum 
-    if r == N:
-        if t_sum > max_sum:
-            print(r, c, t_sum)
-            max_sum = t_sum
-            return
-    
-    elif 0 <= c < N:
-        t_sum += tri[r][c]
-        find_max_path(r+1, c, t_sum)
-        find_max_path(r+1, c+1, t_sum)
+k = 2
+for r in range(1, N):
+    for c in range(k):
+        if c == 0:
+            tri[r][c] = tri[r][c] + tri[r-1][c]
+        elif r == c:
+            tri[r][c] = tri[r][c] + tri[r-1][c-1]
+        else:
+            tri[r][c] = tri[r][c] + max(tri[r-1][c-1], tri[r-1][c])
+    k += 1
 
-find_max_path(0, 0, 0)
-
-for i in range(1, N):
-    
+print(max(tri[N-1]))
