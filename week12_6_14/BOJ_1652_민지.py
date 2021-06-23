@@ -33,6 +33,11 @@ for j in range(N):
 
 print(row_cnt, col_cnt)
 
+
+
+
+
+
 # 방법 2: 함수화 해서 row, col을 한번에 처리할 수 있는 함수 만들기
 def find_cnt(d):
     direction = {'row': lambda i, j: room[i][j], 'col': lambda i, j: room[j][i]}
