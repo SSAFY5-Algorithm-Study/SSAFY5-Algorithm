@@ -14,6 +14,7 @@ def solution(n, cores):
         middle = (s+e) // 2
         while True:
             middle = (s+e) // 2
+            # 현재 시간까지 처리한 양
             k = 0
             for core in cores:
                 k += middle // core

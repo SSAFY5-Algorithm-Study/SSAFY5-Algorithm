@@ -18,6 +18,7 @@ for order in permutations(hitters, 8):
     score = 0
     now_player = 0
     hit_order = sorted([(i, hit) for i, hit in enumerate((4,) + order)], key=lambda x: x[1])
+    print(hit_order)
     for player in players:
         out = 0
         b1, b2, b3 = 0, 0, 0
