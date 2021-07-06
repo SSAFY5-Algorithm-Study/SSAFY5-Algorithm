@@ -32,7 +32,7 @@ def solution(n, t, m, timetable):
     # 1-2. 도착하는 크루를 시간 순서대로 정렬한다
     timetable.sort()
     
-    # 3. 무조건 막차를 타야되는 사람이 m명 이상일 경우 그 인원들 중 m번째 사람보다 적어도 1분 이상 먼저 도착해야한다
+    # 2. 막차를 타야되는 사람이 m명 이상일 경우 그 인원들 중 m번째 사람보다 적어도 1분 이상 먼저 도착해야한다
     passengers = timetable[:(m*n)] if len(timetable) >= (m*n) else timetable
     answer = find_makcha_time(passengers, n, m, t)
 
