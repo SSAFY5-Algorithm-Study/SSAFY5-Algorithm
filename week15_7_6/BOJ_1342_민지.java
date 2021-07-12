@@ -43,7 +43,7 @@ public class BOJ_1342_민지 {
 		}
 		
 		for (int i = 0; i < visited.length; i++) {
-			if (visited[i] == 0 & raw.charAt(i) != prev) {
+			if (visited[i] == 0 && raw.charAt(i) != prev) {
 				visited[i] = 1;
 				isLuckyWord(level+1, raw.charAt(i), word + String.valueOf(raw.charAt(i)));
 				visited[i] = 0;
