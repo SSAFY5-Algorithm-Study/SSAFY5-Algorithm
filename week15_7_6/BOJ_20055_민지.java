@@ -3,7 +3,7 @@ package week15_7_6;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BOJ_20055 {
+public class BOJ_20055_민지 {
     static int N = 0;
     static int K = 0;
     static ArrayList<Integer> belt = new ArrayList<>();
