@@ -11,7 +11,6 @@ def check_interval_component(n):
     word1_dict = initialize_dict(word1, n)
     word2_dict = initialize_dict(word2, n)
 
-    for i in range
 
 
 
