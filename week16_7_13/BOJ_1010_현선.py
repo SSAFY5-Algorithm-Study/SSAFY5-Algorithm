@@ -32,25 +32,43 @@
 #     print(len(x))
 
 
-# 어렵네 ㅎㅎ. 풀이 참고함.
+# 풀이 참고함.
 # DP
 # EX) 동쪽에 N개가 있고, 서쪽에 1개가 있으면 놓을 수 있는 다리의 경우의 수  -> N
 # 서쪽의 개수와 동쪽의 개수가 같으면 : 1개 가능
 # 서쪽의 개수 : N, 동쪽의 개수 : M이면
-# 서쪽에 N개, 동쪽에 M-1개로 지을 수 있는 다리의 수 + 서쪽에 N-1,동쪽에 M-1개로 지을 수 있는 다리의 수
+# 서쪽에 N개, 동쪽에 M-1개로 지을 수 있는 다리의 수 + 서쪽에 N-1,동쪽에 M-1개로 지을 수 있는 다리의 수 <- 그림 참고
 
 T = int(input())
 for t in range(T):
     n, m = map(int, input().split())
     dp = [[0 for _ in range(m+1)] for _ in range(n+1)]
     for i in range(1, n+1):
-        for j in range(1, m+1):
+        # 서쪽이 동쪽보다 개수가 큰 경우는 없으니까 i개 부터 하면됨.
+        for j in range(i, m+1):
+            # i가 1이면, 서쪽개수가 1이므로 동쪽 개수만큼 설치 가능.
             if i == 1:
-                dp[i][j] = j 
+                dp[i][j] = j
                 continue
+            # i가 j면, 겹치는 경우는 안되니까 각 맞라인 연결하는 한가지 경우밖에 없음.
             if i == j:
                 dp[i][j] = 1
+            # 그림 참고.
             else:
-                if j > i:
-                    dp[i][j] = dp[i][j-1] + dp[i-1][j-1]
+                dp[i][j] = dp[i][j-1] + dp[i-1][j-1]
     print(dp[n][m])
+
+
+# # 팩토리얼 써서 풀수도 있음.
+# T = int(input())
+# for t in range(T):
+#     n, m = map(int, input().split())
+#     # mCn이니까, 5C3이라면
+#     m_mul = 1
+#     n_mul = 1
+#     i = 0
+#     for j in range(n):
+#         m_mul *= m-i
+#         n_mul *= i+1
+#         i += 1
+#     print(int(m_mul/n_mul))
