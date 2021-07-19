@@ -19,6 +19,7 @@ def solution(lines):
     for i in range(len(times)):
         s = int(times[i][0] * 1000)
         e = int(times[i][1] * 1000)
-        arr[s:e] = [1] * (e-s)
+        for j in range(s,e+1):
+            arr[j] += 1
     answer = max(arr)
     return answer
