@@ -47,7 +47,8 @@ while True:
     day += 1
     for i in range(N):
         for j in range(N):
-            BFS(i,j)
+            if visited[i][j] == 0:
+                BFS(i,j)
     if flag == N * N:
         break
 print(day-1)
