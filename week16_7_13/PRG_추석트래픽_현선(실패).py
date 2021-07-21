@@ -7,7 +7,7 @@ def solution(lines):
     for i in range(len(lines)):
         a,b,c = lines[i].split()
         h,m,s = b.split(':')
-        sec = int(h) * 24 * 60 + int(m) * 60 + float(s)
+        sec = int(h) * 60 * 60 + int(m) * 60 + float(s)
         during = float(c[:-1])
         starttime = sec - during + 0.001
         if starttime < 0:
