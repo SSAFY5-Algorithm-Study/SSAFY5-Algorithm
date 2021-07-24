@@ -27,4 +27,6 @@ result = set(person[1])
 for i in person[1]:
     for j in person[i]:
         result.add(j)
+        
+print(result)
 print(len(result))
