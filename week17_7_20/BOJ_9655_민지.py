@@ -19,6 +19,9 @@ print("SK" if int(input())%2 else "CY")
 
 
 # 3. DP 1: 이 문제에서 사용 가능한 방법
+N-1 N-3 --> 상대방 이겨
+N-2 N-4 --> 내가 이겨
+
 N = int(input())
 winner = ["" for _ in range(N+1)]
 winner[0] = "CY"
@@ -28,6 +31,15 @@ if N >= 2:
     for i in range(2, N+1):
         winner[i] = winner[i-2]
 print(winner[N])
+
+
+# 3개 6개
+0
+3 --> SK
+6 --> SK | CY
+
+
+
 
 # 4. DP 2: 가져갈 수 있는 돌의 갯수가 바뀌어도 확장성 있게 사용 가능한 방법
 N = int(input())
@@ -41,6 +53,7 @@ else:
     winners[1] = winners[3] = {"SK"}
     winners[2] = winners[4] = {"CY"}
     for i in range(5, N+1):
+        # union - 합집합
         winners[i] = winners[i-2] | winners[i-4]
     for i in winners[N]:
         print(i)
