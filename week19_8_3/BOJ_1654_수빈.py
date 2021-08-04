@@ -28,7 +28,7 @@ base = max(lans)
 
 start = 1
 end = base
-length = []
+# length = []
 
 while start <= end:
     cnt = 0
@@ -38,12 +38,13 @@ while start <= end:
         cnt += (lan // mid)
 
     if cnt >= N:
-        length.append(mid)
+        # length.append(mid)
+        length = mid
         start = mid + 1
     else:
         end = mid - 1
 
-print(max(length))
+print(length)
 
 '''
 [입력]
