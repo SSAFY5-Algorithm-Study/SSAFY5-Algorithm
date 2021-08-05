@@ -1,6 +1,7 @@
 import heapq
 
 def solution(scoville, K):
+    heapq.heapify(scoville)
     answer = 0
     while True:
         min_value = heapq.heappop(scoville)

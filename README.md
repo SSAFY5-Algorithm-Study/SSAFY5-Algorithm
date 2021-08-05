@@ -1,6 +1,6 @@
 # 1일 1 알고리즘 스터디 :star:
 
-#### 스터디 이렇게 진행해요!
+### 스터디 이렇게 진행해요!
 
 - 평일 1일 1문제 출제
 - 일주일에 한번 만나서 문제 풀이 공유 및 리뷰
@@ -9,10 +9,11 @@
 - 파일 업로드시: `<사이트이름_문제번호_내이름.py>` 형식으로 올리기
   - `예시: BOJ_19621_민지.py`
 
-#### 커밋 할때 지켜주세요 (민지 최초 작성)
+### 커밋 할때 지켜주세요 
 
 - `<이니셜>`:  `<문제 번호>` - `<상태 코드>`
-  - 예시: `MK: BOJ19621 - solved`
+  - 예시 (문제를 풀었을 경우): `MK: BOJ_19621 - solved`
+  - 예시 (리드미를 업데이트 한 경우): `SS: README - updated`
 - 상태 코드
   - `solved`: 풀이 완료한 코드
   - `failed`: 풀었지만 통과 안된 코드
@@ -20,7 +21,7 @@
   - `added`: 그림, 설명등등 코드가 아닌 다른 파일이나 내용을 추가
     - `diagram added`, `comments added`... 형식으로 무엇을 추가했는지 적어주기
 
-#### 스터디 문제 목록
+### 스터디 문제 목록
 
 | 날짜                          | 토픽                       | 문제                                                         |
 | ----------------------------- | -------------------------- | ------------------------------------------------------------ |
@@ -42,6 +43,10 @@
 | 7/13 ~ 7/19<br />(리뷰: 7/20)  |                            | - <a href="https://programmers.co.kr/learn/courses/30/lessons/17676">PRG 추석 트래픽</a><br />- <a href="https://programmers.co.kr/learn/courses/30/lessons/68646">PRG 풍선 터트리기</a><br />- <a href="https://www.acmicpc.net/problem/1010">BOJ 1010 다리 놓기</a><br />- <a href="https://www.acmicpc.net/problem/16234">BOJ 16234 인구 이동</a><br />- <a href="https://www.acmicpc.net/problem/10840">BOJ 10840 구간 성분</a> |
 | 7/20 ~ 7/26<br />(리뷰: 7/27) |                            | - [PRG 자물쇠와 열쇠](https://programmers.co.kr/learn/courses/30/lessons/60059)<br />- [PRG 행렬 테두리](https://programmers.co.kr/learn/courses/30/lessons/77485)<br />- [BOJ 9655 돌 게임](https://www.acmicpc.net/problem/9655)<br />- [BOJ 5567 결혼식](https://www.acmicpc.net/problem/5567)<br />- [BOJ 13164 행복 유치원](https://www.acmicpc.net/problem/13164) |
 | 7/27 ~ 8/2<br />(리뷰: 8/3) | | - <a href="https://programmers.co.kr/learn/courses/30/lessons/42626">PRG 더 맵게</a><br />- <a href="https://www.acmicpc.net/problem/8979">BOJ 8979 올림픽</a><br />- <a href="https://www.acmicpc.net/problem/1541">BOJ 1541 잃어버린 괄호</a><br />- <a href="https://www.acmicpc.net/problem/2110">BOJ 2110 공유기 설치</a><br />- <a href="https://www.acmicpc.net/problem/14606">BOJ 14606 피자 (Small)</a> |
+<<<<<<< HEAD
 
 
+=======
+| 8/3 ~ 8/9<br />(리뷰: 8/10) | | - [PRG 부족한 금액 계산하기](https://programmers.co.kr/learn/courses/30/lessons/82612)<br />- [BOJ 랜선 자르기](https://www.acmicpc.net/problem/1654)<br />- [BOJ Four Squares](https://www.acmicpc.net/problem/17626)<br />- [BOJ 생태학](https://www.acmicpc.net/problem/4358)<br />- [BOJ 마인크래프트](https://www.acmicpc.net/problem/18111) |
+>>>>>>> e140e8f1dd8b759fdc273eb1f27e0b54fd1f50af
 
