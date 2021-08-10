@@ -27,6 +27,6 @@ while True:
 tree_list = sorted(tree_dic.items())
 for i,j in tree_list:
     percent = round(j / cnt * 100, 4)
-    x = [i, percent]
-    print(*x)
+    print(i, '%.4f' % percent)
+
 

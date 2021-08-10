@@ -21,4 +21,4 @@ else:
         if arr[i][1:] != arr[i-1][1:]:
             rank = i + 1
     
-print(result)
+    print(result)

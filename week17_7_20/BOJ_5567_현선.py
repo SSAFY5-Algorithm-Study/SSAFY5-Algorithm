@@ -21,6 +21,7 @@ person = [[] for _ in range(n+1)]
 for i in range(m):
     relation = list(map(int,input().split()))
     person[relation[0]].append(relation[1])
+    person[relation[1]].append(relation[0])
 # 상근이 친구들
 result = set(person[1])
 # 상근이 친구의 친구들
@@ -28,5 +29,7 @@ for i in person[1]:
     for j in person[i]:
         result.add(j)
         
-print(result)
-print(len(result))
+if 1 in result:
+    print(len(result)-1)
+else:
+    print(len(result))
