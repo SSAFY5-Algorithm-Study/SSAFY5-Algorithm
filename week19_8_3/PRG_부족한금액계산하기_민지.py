@@ -26,4 +26,8 @@ balance = money - total_price
 그러므로 max (0, 부족한 금액)을 해주면 답을 구할 수 있다
 """
 def solution(price, money, count):
+<<<<<<< HEAD
     return max(0, -(money - (price * ((1+count) * count / 2))))
+=======
+    return max(0, -(money - (price * ((1+count) * count / 2))))
+>>>>>>> a8a96f0b8822dfa0bdba01f8ca297a7aed3f4c46
