@@ -16,4 +16,3 @@ for i in range(2, N+1, 2):
     dp[i] = (dp[i-2] * (i-1)) % (10**9+7)
 
 print(dp[N])
-
