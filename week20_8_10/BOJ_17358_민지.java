@@ -3,7 +3,7 @@ package week20_8_10;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class BOJ_17358 {
+public class BOJ_17358_민지 {
     public static void main(String[] args) throws Exception{
         // 입력 코드
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
