@@ -21,7 +21,6 @@ M = 신뢰하는 연결의 갯수
 AL = 컴퓨터들의 연결 고리 정보를 저장하는 이중 리스트
 ex) AL[1] 에는 1번 컴퓨터를 해킹했을때 해킹할 수 있는 다른 컴퓨터들의 리스트가 저장되어있음
 """
-from copy import deepcopy
 
 N, M = map(int, input().split())
 AL = [[] for _ in range(N+1)]
