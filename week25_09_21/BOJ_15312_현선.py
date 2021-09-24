@@ -16,7 +16,7 @@ while j < namelen:
 for i in range(1, len(dp)):
     for j in range(namelen*2 - i):
         hab = dp[i-1][j] + dp[i-1][j+1]
-        if hab > 10:
+        if hab >= 10:
             hab -= 10
         dp[i][j] = hab
 
