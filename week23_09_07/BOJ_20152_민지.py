@@ -1,16 +1,11 @@
 """
-(0,0) --> (1,1): 1
-(0,0) --> (2,2): 2
-(0,0) --> (3,3): 5
-(0,0) --> (4,4): 14
-(0,0) --> (5,5): 42
-
 col > row것은 쓰지 않는다
+col <= row라는 조건식 필요
 """
 from copy import deepcopy
 
 start, end = map(int, input().split())
-n = abs(start-end) + 2
+n = abs(start-end) + 3
 
 def find_num_paths(start, end):
 
@@ -21,10 +16,11 @@ def find_num_paths(start, end):
     DP[0][1] = 1
     visited = deepcopy(DP)
 
-    # 왼쪽과 위 테두리 방문 처리 하기
+    # 상하좌우 벽치기
     for i in range(n):
         visited[0][i] = visited[i][0] = visited[n-1][i] = visited[i][n-1] = 1
 
+    # 시작점 설정
     queue = [[1,1]]
     visited[1][1] = 1
     dr = [1, 0]
@@ -35,7 +31,7 @@ def find_num_paths(start, end):
         DP[row][col] = DP[row-1][col] + DP[row][col-1]
 
         for i in range(2):
-            if not visited[row+dr[i]][col+dc[i]] and col <= row:
+            if not visited[row+dr[i]][col+dc[i]] and col+dc[i] <= row+dr[i]:
                 visited[row+dr[i]][col+dc[i]] = 1
                 queue.append([row+dr[i], col+dc[i]])
     
