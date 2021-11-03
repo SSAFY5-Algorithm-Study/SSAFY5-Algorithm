@@ -39,6 +39,7 @@ def make_zero(eq, num):
         new_eq = concat(eq, num)
         make_zero(new_eq, num+1)
 
+
 for _ in range(T):
     global N
     N = int(input())
